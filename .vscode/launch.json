@@ -10,7 +10,7 @@
             "request": "launch",
             "program": "${file}",
             "args": [
-                "C:/Users/鹤汀/Documents/GitHub/Clong/Lexical analysis/src/TargetCode/test.c"
+                "./Lexical analysis/src/TargetCode/test.c"
             ],
             "console": "integratedTerminal",
             "justMyCode": true
