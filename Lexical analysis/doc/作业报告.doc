@@ -1,0 +1,2 @@
+本次作业为c语言的词法分析，使用的示例代码为/TargetCode/test.c,使用了antlr工具生成的c语言解析器，使用的是antlr4.7版本，使用的语法文件为clong.g4。
+对每个token，输出为长度，类型，文本，例如Len:9, Type:STRING, Text:"False\n"。
