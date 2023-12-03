@@ -1,4 +1,4 @@
-from Analyses.lexical import analyse
+from Analyses.syntax import analyse
 import sys
 import os
 

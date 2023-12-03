@@ -134,6 +134,11 @@ class clongVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by clongParser#library.
+    def visitLibrary(self, ctx:clongParser.LibraryContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by clongParser#paramName.
     def visitParamName(self, ctx:clongParser.ParamNameContext):
         return self.visitChildren(ctx)

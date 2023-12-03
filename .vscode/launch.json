@@ -10,7 +10,7 @@
             "request": "launch",
             "program": "${file}",
             "args": [
-                "./Lexical analysis/src/TargetCode/test.c"
+                "./Syntax analysis/src/TargetCode/test.c"
             ],
             "console": "integratedTerminal",
             "justMyCode": true

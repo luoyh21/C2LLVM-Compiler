@@ -1,16 +1,16 @@
 //antlr4 -v 4.7.2 -Dlanguage=Python3 clong.g4 -visitor
 grammar clong;
 
-prog:head main EOF;
+prog:head main;
 //导入语句：忽略
 head:(include)*;
-include:'#include' '<' .*? ('.h'|'.cpp')? '>';
+include:'#include' '<' library '>';
 //main语句
 main:('int'|'void') 'main''()''{' body '}';
 //main内语句
-body:(func|block)*;
+body:(func';'|block)*;
 //函数
-func:(printf|gets|strlen|returnFunc)';';
+func:(printf|gets|strlen|returnFunc);
 //语句块
 block:ifElse|whileFunc|forFunc|initParam|initArray|assign;
 //printf函数
@@ -23,7 +23,7 @@ strlen:'strlen''('paramName')';
 returnFunc:'return'(intm)?;
 //if-else语句
 ifElse:ifFunc(elseif)*(elseFunc)?;
-ifFunc:'if''('exp')''{'body'}';
+ifFunc:'if' '('exp')''{'body'}';
 elseif:'else''if''('exp')''{'body'}';
 elseFunc:'else''{'body'}';
 //while语句
@@ -37,7 +37,7 @@ initParam:typeParam paramName ('=' exp)?(','paramName ('=' exp)?)*';';
 //初始化数组
 initArray:typeParam paramName '[' intm ']'';';
 //参数,数组参数赋值
-assign:((paramName|array)'='exp)+exp';';
+assign:(((paramName|array)'=')+exp)';';
 //表达式
 exp:charm|stringm|paramName|(op='-')?(intm|doublem)|array|func|'('exp')'
     |exp op=('+'|'-'|'*'|'/'|'%'|'>'|'<'|'>='|'<='|'=='|'!='|'&&'|'||') exp
@@ -45,10 +45,12 @@ exp:charm|stringm|paramName|(op='-')?(intm|doublem)|array|func|'('exp')'
 //类型
 typeParam:'int'|'char'|'double';
 //数组元素
-array:paramName'['intm']';
+array:paramName'['exp']';
+//库
+library:PAR '.h'?;
 //变量名
-paramName:PARAM;
-PARAM: [a-zA-Z_][0-9A-Za-z_]*;
+paramName:PAR;
+PAR: [a-zA-Z_][a-zA-Z0-9_]*;
 //int值
 intm:INT;
 INT: [0-9]+;
@@ -64,5 +66,4 @@ STRING: '"'.*?'"';
 //跳过符号
 LineComment: '//'.*?'\r'?'\n'   -> skip;
 BlockComment:  '/*'.*?'*/'  -> skip;
-DELIMITER: [\t\r\n]+ -> skip ;
-SPACE:[ ]+ -> skip;
+DELIMITER: [ \t\r\n]+ -> skip ;

@@ -233,6 +233,15 @@ class clongListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by clongParser#library.
+    def enterLibrary(self, ctx:clongParser.LibraryContext):
+        pass
+
+    # Exit a parse tree produced by clongParser#library.
+    def exitLibrary(self, ctx:clongParser.LibraryContext):
+        pass
+
+
     # Enter a parse tree produced by clongParser#paramName.
     def enterParamName(self, ctx:clongParser.ParamNameContext):
         pass
