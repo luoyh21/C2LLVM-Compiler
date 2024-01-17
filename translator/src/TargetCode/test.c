@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
 
 int main()
@@ -8,7 +9,12 @@ int main()
     gets(StringGet);
     int len, i;
     len = strlen(StringGet);
-    if (len < 0 || len > 1000)
+    if (len < 0)
+    {
+        printf("Input Error, only one more chance:\n");
+        gets(StringGet);
+    }
+    if (len > 1000)
     {
         printf("Input Error, only one more chance:\n");
         gets(StringGet);

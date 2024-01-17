@@ -1,0 +1,2296 @@
+{
+    "prog": [
+        {
+            "head": [
+                {
+                    "include": [
+                        {
+                            "type": "'#include'",
+                            "text": "#include"
+                        },
+                        {
+                            "type": "'<'",
+                            "text": "<"
+                        },
+                        {
+                            "library": [
+                                {
+                                    "type": "PAR",
+                                    "text": "stdio"
+                                },
+                                {
+                                    "type": "'.h'",
+                                    "text": ".h"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "'>'",
+                            "text": ">"
+                        }
+                    ]
+                },
+                {
+                    "include": [
+                        {
+                            "type": "'#include'",
+                            "text": "#include"
+                        },
+                        {
+                            "type": "'<'",
+                            "text": "<"
+                        },
+                        {
+                            "library": [
+                                {
+                                    "type": "PAR",
+                                    "text": "string"
+                                },
+                                {
+                                    "type": "'.h'",
+                                    "text": ".h"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "'>'",
+                            "text": ">"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "main": [
+                {
+                    "type": "'int'",
+                    "text": "int"
+                },
+                {
+                    "type": "'main'",
+                    "text": "main"
+                },
+                {
+                    "type": "'()'",
+                    "text": "()"
+                },
+                {
+                    "type": "'{'",
+                    "text": "{"
+                },
+                {
+                    "body": [
+                        {
+                            "block": [
+                                {
+                                    "initArray": [
+                                        {
+                                            "typeParam": [
+                                                {
+                                                    "type": "'char'",
+                                                    "text": "char"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "paramName": [
+                                                {
+                                                    "type": "PAR",
+                                                    "text": "input_str"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "'['",
+                                            "text": "["
+                                        },
+                                        {
+                                            "intm": [
+                                                {
+                                                    "type": "INT",
+                                                    "text": "1000"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "']'",
+                                            "text": "]"
+                                        },
+                                        {
+                                            "type": "';'",
+                                            "text": ";"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "block": [
+                                {
+                                    "initParam": [
+                                        {
+                                            "typeParam": [
+                                                {
+                                                    "type": "'int'",
+                                                    "text": "int"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "paramName": [
+                                                {
+                                                    "type": "PAR",
+                                                    "text": "count"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "'='",
+                                            "text": "="
+                                        },
+                                        {
+                                            "exp": [
+                                                {
+                                                    "intm": [
+                                                        {
+                                                            "type": "INT",
+                                                            "text": "0"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "';'",
+                                            "text": ";"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "block": [
+                                {
+                                    "initArray": [
+                                        {
+                                            "typeParam": [
+                                                {
+                                                    "type": "'int'",
+                                                    "text": "int"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "paramName": [
+                                                {
+                                                    "type": "PAR",
+                                                    "text": "numbers"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "'['",
+                                            "text": "["
+                                        },
+                                        {
+                                            "intm": [
+                                                {
+                                                    "type": "INT",
+                                                    "text": "5000"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "']'",
+                                            "text": "]"
+                                        },
+                                        {
+                                            "type": "';'",
+                                            "text": ";"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "func": [
+                                {
+                                    "printf": [
+                                        {
+                                            "type": "'printf'",
+                                            "text": "printf"
+                                        },
+                                        {
+                                            "type": "'('",
+                                            "text": "("
+                                        },
+                                        {
+                                            "stringm": [
+                                                {
+                                                    "type": "STRING",
+                                                    "text": "\"Please input Char Array Under 1000 characters\\n\""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "')'",
+                                            "text": ")"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "';'",
+                            "text": ";"
+                        },
+                        {
+                            "func": [
+                                {
+                                    "gets": [
+                                        {
+                                            "type": "'gets'",
+                                            "text": "gets"
+                                        },
+                                        {
+                                            "type": "'('",
+                                            "text": "("
+                                        },
+                                        {
+                                            "paramName": [
+                                                {
+                                                    "type": "PAR",
+                                                    "text": "input_str"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "')'",
+                                            "text": ")"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "';'",
+                            "text": ";"
+                        },
+                        {
+                            "block": [
+                                {
+                                    "initParam": [
+                                        {
+                                            "typeParam": [
+                                                {
+                                                    "type": "'int'",
+                                                    "text": "int"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "paramName": [
+                                                {
+                                                    "type": "PAR",
+                                                    "text": "len"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "'='",
+                                            "text": "="
+                                        },
+                                        {
+                                            "exp": [
+                                                {
+                                                    "func": [
+                                                        {
+                                                            "strlen": [
+                                                                {
+                                                                    "type": "'strlen'",
+                                                                    "text": "strlen"
+                                                                },
+                                                                {
+                                                                    "type": "'('",
+                                                                    "text": "("
+                                                                },
+                                                                {
+                                                                    "paramName": [
+                                                                        {
+                                                                            "type": "PAR",
+                                                                            "text": "input_str"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "type": "')'",
+                                                                    "text": ")"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "';'",
+                                            "text": ";"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "block": [
+                                {
+                                    "initParam": [
+                                        {
+                                            "typeParam": [
+                                                {
+                                                    "type": "'int'",
+                                                    "text": "int"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "paramName": [
+                                                {
+                                                    "type": "PAR",
+                                                    "text": "temp"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "'='",
+                                            "text": "="
+                                        },
+                                        {
+                                            "exp": [
+                                                {
+                                                    "intm": [
+                                                        {
+                                                            "type": "INT",
+                                                            "text": "0"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "';'",
+                                            "text": ";"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "block": [
+                                {
+                                    "forFunc": [
+                                        {
+                                            "type": "'for'",
+                                            "text": "for"
+                                        },
+                                        {
+                                            "type": "'('",
+                                            "text": "("
+                                        },
+                                        {
+                                            "initFunc": [
+                                                {
+                                                    "typeParam": [
+                                                        {
+                                                            "type": "'int'",
+                                                            "text": "int"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "paramName": [
+                                                        {
+                                                            "type": "PAR",
+                                                            "text": "i"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "'='",
+                                                    "text": "="
+                                                },
+                                                {
+                                                    "exp": [
+                                                        {
+                                                            "exp": [
+                                                                {
+                                                                    "paramName": [
+                                                                        {
+                                                                            "type": "PAR",
+                                                                            "text": "len"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "'-'",
+                                                            "text": "-"
+                                                        },
+                                                        {
+                                                            "exp": [
+                                                                {
+                                                                    "intm": [
+                                                                        {
+                                                                            "type": "INT",
+                                                                            "text": "1"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "';'",
+                                            "text": ";"
+                                        },
+                                        {
+                                            "exp": [
+                                                {
+                                                    "exp": [
+                                                        {
+                                                            "paramName": [
+                                                                {
+                                                                    "type": "PAR",
+                                                                    "text": "i"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "'>='",
+                                                    "text": ">="
+                                                },
+                                                {
+                                                    "exp": [
+                                                        {
+                                                            "intm": [
+                                                                {
+                                                                    "type": "INT",
+                                                                    "text": "0"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "';'",
+                                            "text": ";"
+                                        },
+                                        {
+                                            "assignFunc": [
+                                                {
+                                                    "paramName": [
+                                                        {
+                                                            "type": "PAR",
+                                                            "text": "i"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "'='",
+                                                    "text": "="
+                                                },
+                                                {
+                                                    "exp": [
+                                                        {
+                                                            "exp": [
+                                                                {
+                                                                    "paramName": [
+                                                                        {
+                                                                            "type": "PAR",
+                                                                            "text": "i"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "'-'",
+                                                            "text": "-"
+                                                        },
+                                                        {
+                                                            "exp": [
+                                                                {
+                                                                    "intm": [
+                                                                        {
+                                                                            "type": "INT",
+                                                                            "text": "1"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "')'",
+                                            "text": ")"
+                                        },
+                                        {
+                                            "type": "'{'",
+                                            "text": "{"
+                                        },
+                                        {
+                                            "body": [
+                                                {
+                                                    "block": [
+                                                        {
+                                                            "ifElse": [
+                                                                {
+                                                                    "ifFunc": [
+                                                                        {
+                                                                            "type": "'if'",
+                                                                            "text": "if"
+                                                                        },
+                                                                        {
+                                                                            "type": "'('",
+                                                                            "text": "("
+                                                                        },
+                                                                        {
+                                                                            "exp": [
+                                                                                {
+                                                                                    "exp": [
+                                                                                        {
+                                                                                            "array": [
+                                                                                                {
+                                                                                                    "paramName": [
+                                                                                                        {
+                                                                                                            "type": "PAR",
+                                                                                                            "text": "input_str"
+                                                                                                        }
+                                                                                                    ]
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "'['",
+                                                                                                    "text": "["
+                                                                                                },
+                                                                                                {
+                                                                                                    "exp": [
+                                                                                                        {
+                                                                                                            "paramName": [
+                                                                                                                {
+                                                                                                                    "type": "PAR",
+                                                                                                                    "text": "i"
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        }
+                                                                                                    ]
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "']'",
+                                                                                                    "text": "]"
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                {
+                                                                                    "type": "'=='",
+                                                                                    "text": "=="
+                                                                                },
+                                                                                {
+                                                                                    "exp": [
+                                                                                        {
+                                                                                            "charm": [
+                                                                                                {
+                                                                                                    "type": "CHAR",
+                                                                                                    "text": "','"
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "type": "')'",
+                                                                            "text": ")"
+                                                                        },
+                                                                        {
+                                                                            "type": "'{'",
+                                                                            "text": "{"
+                                                                        },
+                                                                        {
+                                                                            "body": [
+                                                                                {
+                                                                                    "block": [
+                                                                                        {
+                                                                                            "assign": [
+                                                                                                {
+                                                                                                    "array": [
+                                                                                                        {
+                                                                                                            "paramName": [
+                                                                                                                {
+                                                                                                                    "type": "PAR",
+                                                                                                                    "text": "numbers"
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "type": "'['",
+                                                                                                            "text": "["
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "exp": [
+                                                                                                                {
+                                                                                                                    "paramName": [
+                                                                                                                        {
+                                                                                                                            "type": "PAR",
+                                                                                                                            "text": "count"
+                                                                                                                        }
+                                                                                                                    ]
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "type": "']'",
+                                                                                                            "text": "]"
+                                                                                                        }
+                                                                                                    ]
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "'='",
+                                                                                                    "text": "="
+                                                                                                },
+                                                                                                {
+                                                                                                    "exp": [
+                                                                                                        {
+                                                                                                            "paramName": [
+                                                                                                                {
+                                                                                                                    "type": "PAR",
+                                                                                                                    "text": "temp"
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        }
+                                                                                                    ]
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "';'",
+                                                                                                    "text": ";"
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                {
+                                                                                    "block": [
+                                                                                        {
+                                                                                            "assign": [
+                                                                                                {
+                                                                                                    "paramName": [
+                                                                                                        {
+                                                                                                            "type": "PAR",
+                                                                                                            "text": "temp"
+                                                                                                        }
+                                                                                                    ]
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "'='",
+                                                                                                    "text": "="
+                                                                                                },
+                                                                                                {
+                                                                                                    "exp": [
+                                                                                                        {
+                                                                                                            "intm": [
+                                                                                                                {
+                                                                                                                    "type": "INT",
+                                                                                                                    "text": "0"
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        }
+                                                                                                    ]
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "';'",
+                                                                                                    "text": ";"
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                {
+                                                                                    "block": [
+                                                                                        {
+                                                                                            "assign": [
+                                                                                                {
+                                                                                                    "paramName": [
+                                                                                                        {
+                                                                                                            "type": "PAR",
+                                                                                                            "text": "count"
+                                                                                                        }
+                                                                                                    ]
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "'='",
+                                                                                                    "text": "="
+                                                                                                },
+                                                                                                {
+                                                                                                    "exp": [
+                                                                                                        {
+                                                                                                            "exp": [
+                                                                                                                {
+                                                                                                                    "paramName": [
+                                                                                                                        {
+                                                                                                                            "type": "PAR",
+                                                                                                                            "text": "count"
+                                                                                                                        }
+                                                                                                                    ]
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "type": "'+'",
+                                                                                                            "text": "+"
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "exp": [
+                                                                                                                {
+                                                                                                                    "intm": [
+                                                                                                                        {
+                                                                                                                            "type": "INT",
+                                                                                                                            "text": "1"
+                                                                                                                        }
+                                                                                                                    ]
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        }
+                                                                                                    ]
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "';'",
+                                                                                                    "text": ";"
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "type": "'}'",
+                                                                            "text": "}"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "elseif": [
+                                                                        {
+                                                                            "type": "'else'",
+                                                                            "text": "else"
+                                                                        },
+                                                                        {
+                                                                            "type": "'if'",
+                                                                            "text": "if"
+                                                                        },
+                                                                        {
+                                                                            "type": "'('",
+                                                                            "text": "("
+                                                                        },
+                                                                        {
+                                                                            "exp": [
+                                                                                {
+                                                                                    "exp": [
+                                                                                        {
+                                                                                            "array": [
+                                                                                                {
+                                                                                                    "paramName": [
+                                                                                                        {
+                                                                                                            "type": "PAR",
+                                                                                                            "text": "input_str"
+                                                                                                        }
+                                                                                                    ]
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "'['",
+                                                                                                    "text": "["
+                                                                                                },
+                                                                                                {
+                                                                                                    "exp": [
+                                                                                                        {
+                                                                                                            "paramName": [
+                                                                                                                {
+                                                                                                                    "type": "PAR",
+                                                                                                                    "text": "i"
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        }
+                                                                                                    ]
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "']'",
+                                                                                                    "text": "]"
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                {
+                                                                                    "type": "'=='",
+                                                                                    "text": "=="
+                                                                                },
+                                                                                {
+                                                                                    "exp": [
+                                                                                        {
+                                                                                            "charm": [
+                                                                                                {
+                                                                                                    "type": "CHAR",
+                                                                                                    "text": "'-'"
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "type": "')'",
+                                                                            "text": ")"
+                                                                        },
+                                                                        {
+                                                                            "type": "'{'",
+                                                                            "text": "{"
+                                                                        },
+                                                                        {
+                                                                            "body": [
+                                                                                {
+                                                                                    "block": [
+                                                                                        {
+                                                                                            "assign": [
+                                                                                                {
+                                                                                                    "paramName": [
+                                                                                                        {
+                                                                                                            "type": "PAR",
+                                                                                                            "text": "temp"
+                                                                                                        }
+                                                                                                    ]
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "'='",
+                                                                                                    "text": "="
+                                                                                                },
+                                                                                                {
+                                                                                                    "exp": [
+                                                                                                        {
+                                                                                                            "exp": [
+                                                                                                                {
+                                                                                                                    "intm": [
+                                                                                                                        {
+                                                                                                                            "type": "INT",
+                                                                                                                            "text": "0"
+                                                                                                                        }
+                                                                                                                    ]
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "type": "'-'",
+                                                                                                            "text": "-"
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "exp": [
+                                                                                                                {
+                                                                                                                    "paramName": [
+                                                                                                                        {
+                                                                                                                            "type": "PAR",
+                                                                                                                            "text": "temp"
+                                                                                                                        }
+                                                                                                                    ]
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        }
+                                                                                                    ]
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "';'",
+                                                                                                    "text": ";"
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "type": "'}'",
+                                                                            "text": "}"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "elseFunc": [
+                                                                        {
+                                                                            "type": "'else'",
+                                                                            "text": "else"
+                                                                        },
+                                                                        {
+                                                                            "type": "'{'",
+                                                                            "text": "{"
+                                                                        },
+                                                                        {
+                                                                            "body": [
+                                                                                {
+                                                                                    "block": [
+                                                                                        {
+                                                                                            "assign": [
+                                                                                                {
+                                                                                                    "paramName": [
+                                                                                                        {
+                                                                                                            "type": "PAR",
+                                                                                                            "text": "temp"
+                                                                                                        }
+                                                                                                    ]
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "'='",
+                                                                                                    "text": "="
+                                                                                                },
+                                                                                                {
+                                                                                                    "exp": [
+                                                                                                        {
+                                                                                                            "exp": [
+                                                                                                                {
+                                                                                                                    "exp": [
+                                                                                                                        {
+                                                                                                                            "exp": [
+                                                                                                                                {
+                                                                                                                                    "paramName": [
+                                                                                                                                        {
+                                                                                                                                            "type": "PAR",
+                                                                                                                                            "text": "temp"
+                                                                                                                                        }
+                                                                                                                                    ]
+                                                                                                                                }
+                                                                                                                            ]
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                            "type": "'*'",
+                                                                                                                            "text": "*"
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                            "exp": [
+                                                                                                                                {
+                                                                                                                                    "intm": [
+                                                                                                                                        {
+                                                                                                                                            "type": "INT",
+                                                                                                                                            "text": "10"
+                                                                                                                                        }
+                                                                                                                                    ]
+                                                                                                                                }
+                                                                                                                            ]
+                                                                                                                        }
+                                                                                                                    ]
+                                                                                                                },
+                                                                                                                {
+                                                                                                                    "type": "'+'",
+                                                                                                                    "text": "+"
+                                                                                                                },
+                                                                                                                {
+                                                                                                                    "exp": [
+                                                                                                                        {
+                                                                                                                            "array": [
+                                                                                                                                {
+                                                                                                                                    "paramName": [
+                                                                                                                                        {
+                                                                                                                                            "type": "PAR",
+                                                                                                                                            "text": "input_str"
+                                                                                                                                        }
+                                                                                                                                    ]
+                                                                                                                                },
+                                                                                                                                {
+                                                                                                                                    "type": "'['",
+                                                                                                                                    "text": "["
+                                                                                                                                },
+                                                                                                                                {
+                                                                                                                                    "exp": [
+                                                                                                                                        {
+                                                                                                                                            "paramName": [
+                                                                                                                                                {
+                                                                                                                                                    "type": "PAR",
+                                                                                                                                                    "text": "i"
+                                                                                                                                                }
+                                                                                                                                            ]
+                                                                                                                                        }
+                                                                                                                                    ]
+                                                                                                                                },
+                                                                                                                                {
+                                                                                                                                    "type": "']'",
+                                                                                                                                    "text": "]"
+                                                                                                                                }
+                                                                                                                            ]
+                                                                                                                        }
+                                                                                                                    ]
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "type": "'-'",
+                                                                                                            "text": "-"
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "exp": [
+                                                                                                                {
+                                                                                                                    "charm": [
+                                                                                                                        {
+                                                                                                                            "type": "CHAR",
+                                                                                                                            "text": "'0'"
+                                                                                                                        }
+                                                                                                                    ]
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        }
+                                                                                                    ]
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "';'",
+                                                                                                    "text": ";"
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "type": "'}'",
+                                                                            "text": "}"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "'}'",
+                                            "text": "}"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "block": [
+                                {
+                                    "assign": [
+                                        {
+                                            "array": [
+                                                {
+                                                    "paramName": [
+                                                        {
+                                                            "type": "PAR",
+                                                            "text": "numbers"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "'['",
+                                                    "text": "["
+                                                },
+                                                {
+                                                    "exp": [
+                                                        {
+                                                            "paramName": [
+                                                                {
+                                                                    "type": "PAR",
+                                                                    "text": "count"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "']'",
+                                                    "text": "]"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "'='",
+                                            "text": "="
+                                        },
+                                        {
+                                            "exp": [
+                                                {
+                                                    "paramName": [
+                                                        {
+                                                            "type": "PAR",
+                                                            "text": "temp"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "';'",
+                                            "text": ";"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "block": [
+                                {
+                                    "assign": [
+                                        {
+                                            "paramName": [
+                                                {
+                                                    "type": "PAR",
+                                                    "text": "count"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "'='",
+                                            "text": "="
+                                        },
+                                        {
+                                            "exp": [
+                                                {
+                                                    "exp": [
+                                                        {
+                                                            "paramName": [
+                                                                {
+                                                                    "type": "PAR",
+                                                                    "text": "count"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "'+'",
+                                                    "text": "+"
+                                                },
+                                                {
+                                                    "exp": [
+                                                        {
+                                                            "intm": [
+                                                                {
+                                                                    "type": "INT",
+                                                                    "text": "1"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "';'",
+                                            "text": ";"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "block": [
+                                {
+                                    "forFunc": [
+                                        {
+                                            "type": "'for'",
+                                            "text": "for"
+                                        },
+                                        {
+                                            "type": "'('",
+                                            "text": "("
+                                        },
+                                        {
+                                            "initFunc": [
+                                                {
+                                                    "typeParam": [
+                                                        {
+                                                            "type": "'int'",
+                                                            "text": "int"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "paramName": [
+                                                        {
+                                                            "type": "PAR",
+                                                            "text": "i"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "'='",
+                                                    "text": "="
+                                                },
+                                                {
+                                                    "exp": [
+                                                        {
+                                                            "intm": [
+                                                                {
+                                                                    "type": "INT",
+                                                                    "text": "0"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "';'",
+                                            "text": ";"
+                                        },
+                                        {
+                                            "exp": [
+                                                {
+                                                    "exp": [
+                                                        {
+                                                            "paramName": [
+                                                                {
+                                                                    "type": "PAR",
+                                                                    "text": "i"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "'<'",
+                                                    "text": "<"
+                                                },
+                                                {
+                                                    "exp": [
+                                                        {
+                                                            "paramName": [
+                                                                {
+                                                                    "type": "PAR",
+                                                                    "text": "count"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "';'",
+                                            "text": ";"
+                                        },
+                                        {
+                                            "assignFunc": [
+                                                {
+                                                    "paramName": [
+                                                        {
+                                                            "type": "PAR",
+                                                            "text": "i"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "'='",
+                                                    "text": "="
+                                                },
+                                                {
+                                                    "exp": [
+                                                        {
+                                                            "exp": [
+                                                                {
+                                                                    "paramName": [
+                                                                        {
+                                                                            "type": "PAR",
+                                                                            "text": "i"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "'+'",
+                                                            "text": "+"
+                                                        },
+                                                        {
+                                                            "exp": [
+                                                                {
+                                                                    "intm": [
+                                                                        {
+                                                                            "type": "INT",
+                                                                            "text": "1"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "')'",
+                                            "text": ")"
+                                        },
+                                        {
+                                            "type": "'{'",
+                                            "text": "{"
+                                        },
+                                        {
+                                            "body": [
+                                                {
+                                                    "block": [
+                                                        {
+                                                            "forFunc": [
+                                                                {
+                                                                    "type": "'for'",
+                                                                    "text": "for"
+                                                                },
+                                                                {
+                                                                    "type": "'('",
+                                                                    "text": "("
+                                                                },
+                                                                {
+                                                                    "initFunc": [
+                                                                        {
+                                                                            "typeParam": [
+                                                                                {
+                                                                                    "type": "'int'",
+                                                                                    "text": "int"
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "paramName": [
+                                                                                {
+                                                                                    "type": "PAR",
+                                                                                    "text": "j"
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "type": "'='",
+                                                                            "text": "="
+                                                                        },
+                                                                        {
+                                                                            "exp": [
+                                                                                {
+                                                                                    "intm": [
+                                                                                        {
+                                                                                            "type": "INT",
+                                                                                            "text": "0"
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "type": "';'",
+                                                                    "text": ";"
+                                                                },
+                                                                {
+                                                                    "exp": [
+                                                                        {
+                                                                            "exp": [
+                                                                                {
+                                                                                    "exp": [
+                                                                                        {
+                                                                                            "exp": [
+                                                                                                {
+                                                                                                    "paramName": [
+                                                                                                        {
+                                                                                                            "type": "PAR",
+                                                                                                            "text": "j"
+                                                                                                        }
+                                                                                                    ]
+                                                                                                }
+                                                                                            ]
+                                                                                        },
+                                                                                        {
+                                                                                            "type": "'<'",
+                                                                                            "text": "<"
+                                                                                        },
+                                                                                        {
+                                                                                            "exp": [
+                                                                                                {
+                                                                                                    "paramName": [
+                                                                                                        {
+                                                                                                            "type": "PAR",
+                                                                                                            "text": "count"
+                                                                                                        }
+                                                                                                    ]
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                {
+                                                                                    "type": "'-'",
+                                                                                    "text": "-"
+                                                                                },
+                                                                                {
+                                                                                    "exp": [
+                                                                                        {
+                                                                                            "paramName": [
+                                                                                                {
+                                                                                                    "type": "PAR",
+                                                                                                    "text": "i"
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "type": "'-'",
+                                                                            "text": "-"
+                                                                        },
+                                                                        {
+                                                                            "exp": [
+                                                                                {
+                                                                                    "intm": [
+                                                                                        {
+                                                                                            "type": "INT",
+                                                                                            "text": "1"
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "type": "';'",
+                                                                    "text": ";"
+                                                                },
+                                                                {
+                                                                    "assignFunc": [
+                                                                        {
+                                                                            "paramName": [
+                                                                                {
+                                                                                    "type": "PAR",
+                                                                                    "text": "j"
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "type": "'='",
+                                                                            "text": "="
+                                                                        },
+                                                                        {
+                                                                            "exp": [
+                                                                                {
+                                                                                    "exp": [
+                                                                                        {
+                                                                                            "paramName": [
+                                                                                                {
+                                                                                                    "type": "PAR",
+                                                                                                    "text": "j"
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                {
+                                                                                    "type": "'+'",
+                                                                                    "text": "+"
+                                                                                },
+                                                                                {
+                                                                                    "exp": [
+                                                                                        {
+                                                                                            "intm": [
+                                                                                                {
+                                                                                                    "type": "INT",
+                                                                                                    "text": "1"
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "type": "')'",
+                                                                    "text": ")"
+                                                                },
+                                                                {
+                                                                    "type": "'{'",
+                                                                    "text": "{"
+                                                                },
+                                                                {
+                                                                    "body": [
+                                                                        {
+                                                                            "block": [
+                                                                                {
+                                                                                    "ifElse": [
+                                                                                        {
+                                                                                            "ifFunc": [
+                                                                                                {
+                                                                                                    "type": "'if'",
+                                                                                                    "text": "if"
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "'('",
+                                                                                                    "text": "("
+                                                                                                },
+                                                                                                {
+                                                                                                    "exp": [
+                                                                                                        {
+                                                                                                            "exp": [
+                                                                                                                {
+                                                                                                                    "array": [
+                                                                                                                        {
+                                                                                                                            "paramName": [
+                                                                                                                                {
+                                                                                                                                    "type": "PAR",
+                                                                                                                                    "text": "numbers"
+                                                                                                                                }
+                                                                                                                            ]
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                            "type": "'['",
+                                                                                                                            "text": "["
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                            "exp": [
+                                                                                                                                {
+                                                                                                                                    "paramName": [
+                                                                                                                                        {
+                                                                                                                                            "type": "PAR",
+                                                                                                                                            "text": "j"
+                                                                                                                                        }
+                                                                                                                                    ]
+                                                                                                                                }
+                                                                                                                            ]
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                            "type": "']'",
+                                                                                                                            "text": "]"
+                                                                                                                        }
+                                                                                                                    ]
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "type": "'>'",
+                                                                                                            "text": ">"
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "exp": [
+                                                                                                                {
+                                                                                                                    "array": [
+                                                                                                                        {
+                                                                                                                            "paramName": [
+                                                                                                                                {
+                                                                                                                                    "type": "PAR",
+                                                                                                                                    "text": "numbers"
+                                                                                                                                }
+                                                                                                                            ]
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                            "type": "'['",
+                                                                                                                            "text": "["
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                            "exp": [
+                                                                                                                                {
+                                                                                                                                    "exp": [
+                                                                                                                                        {
+                                                                                                                                            "paramName": [
+                                                                                                                                                {
+                                                                                                                                                    "type": "PAR",
+                                                                                                                                                    "text": "j"
+                                                                                                                                                }
+                                                                                                                                            ]
+                                                                                                                                        }
+                                                                                                                                    ]
+                                                                                                                                },
+                                                                                                                                {
+                                                                                                                                    "type": "'+'",
+                                                                                                                                    "text": "+"
+                                                                                                                                },
+                                                                                                                                {
+                                                                                                                                    "exp": [
+                                                                                                                                        {
+                                                                                                                                            "intm": [
+                                                                                                                                                {
+                                                                                                                                                    "type": "INT",
+                                                                                                                                                    "text": "1"
+                                                                                                                                                }
+                                                                                                                                            ]
+                                                                                                                                        }
+                                                                                                                                    ]
+                                                                                                                                }
+                                                                                                                            ]
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                            "type": "']'",
+                                                                                                                            "text": "]"
+                                                                                                                        }
+                                                                                                                    ]
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        }
+                                                                                                    ]
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "')'",
+                                                                                                    "text": ")"
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "'{'",
+                                                                                                    "text": "{"
+                                                                                                },
+                                                                                                {
+                                                                                                    "body": [
+                                                                                                        {
+                                                                                                            "block": [
+                                                                                                                {
+                                                                                                                    "initParam": [
+                                                                                                                        {
+                                                                                                                            "typeParam": [
+                                                                                                                                {
+                                                                                                                                    "type": "'int'",
+                                                                                                                                    "text": "int"
+                                                                                                                                }
+                                                                                                                            ]
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                            "paramName": [
+                                                                                                                                {
+                                                                                                                                    "type": "PAR",
+                                                                                                                                    "text": "temp"
+                                                                                                                                }
+                                                                                                                            ]
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                            "type": "'='",
+                                                                                                                            "text": "="
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                            "exp": [
+                                                                                                                                {
+                                                                                                                                    "array": [
+                                                                                                                                        {
+                                                                                                                                            "paramName": [
+                                                                                                                                                {
+                                                                                                                                                    "type": "PAR",
+                                                                                                                                                    "text": "numbers"
+                                                                                                                                                }
+                                                                                                                                            ]
+                                                                                                                                        },
+                                                                                                                                        {
+                                                                                                                                            "type": "'['",
+                                                                                                                                            "text": "["
+                                                                                                                                        },
+                                                                                                                                        {
+                                                                                                                                            "exp": [
+                                                                                                                                                {
+                                                                                                                                                    "paramName": [
+                                                                                                                                                        {
+                                                                                                                                                            "type": "PAR",
+                                                                                                                                                            "text": "j"
+                                                                                                                                                        }
+                                                                                                                                                    ]
+                                                                                                                                                }
+                                                                                                                                            ]
+                                                                                                                                        },
+                                                                                                                                        {
+                                                                                                                                            "type": "']'",
+                                                                                                                                            "text": "]"
+                                                                                                                                        }
+                                                                                                                                    ]
+                                                                                                                                }
+                                                                                                                            ]
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                            "type": "';'",
+                                                                                                                            "text": ";"
+                                                                                                                        }
+                                                                                                                    ]
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "block": [
+                                                                                                                {
+                                                                                                                    "assign": [
+                                                                                                                        {
+                                                                                                                            "array": [
+                                                                                                                                {
+                                                                                                                                    "paramName": [
+                                                                                                                                        {
+                                                                                                                                            "type": "PAR",
+                                                                                                                                            "text": "numbers"
+                                                                                                                                        }
+                                                                                                                                    ]
+                                                                                                                                },
+                                                                                                                                {
+                                                                                                                                    "type": "'['",
+                                                                                                                                    "text": "["
+                                                                                                                                },
+                                                                                                                                {
+                                                                                                                                    "exp": [
+                                                                                                                                        {
+                                                                                                                                            "paramName": [
+                                                                                                                                                {
+                                                                                                                                                    "type": "PAR",
+                                                                                                                                                    "text": "j"
+                                                                                                                                                }
+                                                                                                                                            ]
+                                                                                                                                        }
+                                                                                                                                    ]
+                                                                                                                                },
+                                                                                                                                {
+                                                                                                                                    "type": "']'",
+                                                                                                                                    "text": "]"
+                                                                                                                                }
+                                                                                                                            ]
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                            "type": "'='",
+                                                                                                                            "text": "="
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                            "exp": [
+                                                                                                                                {
+                                                                                                                                    "array": [
+                                                                                                                                        {
+                                                                                                                                            "paramName": [
+                                                                                                                                                {
+                                                                                                                                                    "type": "PAR",
+                                                                                                                                                    "text": "numbers"
+                                                                                                                                                }
+                                                                                                                                            ]
+                                                                                                                                        },
+                                                                                                                                        {
+                                                                                                                                            "type": "'['",
+                                                                                                                                            "text": "["
+                                                                                                                                        },
+                                                                                                                                        {
+                                                                                                                                            "exp": [
+                                                                                                                                                {
+                                                                                                                                                    "exp": [
+                                                                                                                                                        {
+                                                                                                                                                            "paramName": [
+                                                                                                                                                                {
+                                                                                                                                                                    "type": "PAR",
+                                                                                                                                                                    "text": "j"
+                                                                                                                                                                }
+                                                                                                                                                            ]
+                                                                                                                                                        }
+                                                                                                                                                    ]
+                                                                                                                                                },
+                                                                                                                                                {
+                                                                                                                                                    "type": "'+'",
+                                                                                                                                                    "text": "+"
+                                                                                                                                                },
+                                                                                                                                                {
+                                                                                                                                                    "exp": [
+                                                                                                                                                        {
+                                                                                                                                                            "intm": [
+                                                                                                                                                                {
+                                                                                                                                                                    "type": "INT",
+                                                                                                                                                                    "text": "1"
+                                                                                                                                                                }
+                                                                                                                                                            ]
+                                                                                                                                                        }
+                                                                                                                                                    ]
+                                                                                                                                                }
+                                                                                                                                            ]
+                                                                                                                                        },
+                                                                                                                                        {
+                                                                                                                                            "type": "']'",
+                                                                                                                                            "text": "]"
+                                                                                                                                        }
+                                                                                                                                    ]
+                                                                                                                                }
+                                                                                                                            ]
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                            "type": "';'",
+                                                                                                                            "text": ";"
+                                                                                                                        }
+                                                                                                                    ]
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "block": [
+                                                                                                                {
+                                                                                                                    "assign": [
+                                                                                                                        {
+                                                                                                                            "array": [
+                                                                                                                                {
+                                                                                                                                    "paramName": [
+                                                                                                                                        {
+                                                                                                                                            "type": "PAR",
+                                                                                                                                            "text": "numbers"
+                                                                                                                                        }
+                                                                                                                                    ]
+                                                                                                                                },
+                                                                                                                                {
+                                                                                                                                    "type": "'['",
+                                                                                                                                    "text": "["
+                                                                                                                                },
+                                                                                                                                {
+                                                                                                                                    "exp": [
+                                                                                                                                        {
+                                                                                                                                            "exp": [
+                                                                                                                                                {
+                                                                                                                                                    "paramName": [
+                                                                                                                                                        {
+                                                                                                                                                            "type": "PAR",
+                                                                                                                                                            "text": "j"
+                                                                                                                                                        }
+                                                                                                                                                    ]
+                                                                                                                                                }
+                                                                                                                                            ]
+                                                                                                                                        },
+                                                                                                                                        {
+                                                                                                                                            "type": "'+'",
+                                                                                                                                            "text": "+"
+                                                                                                                                        },
+                                                                                                                                        {
+                                                                                                                                            "exp": [
+                                                                                                                                                {
+                                                                                                                                                    "intm": [
+                                                                                                                                                        {
+                                                                                                                                                            "type": "INT",
+                                                                                                                                                            "text": "1"
+                                                                                                                                                        }
+                                                                                                                                                    ]
+                                                                                                                                                }
+                                                                                                                                            ]
+                                                                                                                                        }
+                                                                                                                                    ]
+                                                                                                                                },
+                                                                                                                                {
+                                                                                                                                    "type": "']'",
+                                                                                                                                    "text": "]"
+                                                                                                                                }
+                                                                                                                            ]
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                            "type": "'='",
+                                                                                                                            "text": "="
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                            "exp": [
+                                                                                                                                {
+                                                                                                                                    "paramName": [
+                                                                                                                                        {
+                                                                                                                                            "type": "PAR",
+                                                                                                                                            "text": "temp"
+                                                                                                                                        }
+                                                                                                                                    ]
+                                                                                                                                }
+                                                                                                                            ]
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                            "type": "';'",
+                                                                                                                            "text": ";"
+                                                                                                                        }
+                                                                                                                    ]
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        }
+                                                                                                    ]
+                                                                                                },
+                                                                                                {
+                                                                                                    "type": "'}'",
+                                                                                                    "text": "}"
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "type": "'}'",
+                                                                    "text": "}"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "'}'",
+                                            "text": "}"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "block": [
+                                {
+                                    "forFunc": [
+                                        {
+                                            "type": "'for'",
+                                            "text": "for"
+                                        },
+                                        {
+                                            "type": "'('",
+                                            "text": "("
+                                        },
+                                        {
+                                            "initFunc": [
+                                                {
+                                                    "typeParam": [
+                                                        {
+                                                            "type": "'int'",
+                                                            "text": "int"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "paramName": [
+                                                        {
+                                                            "type": "PAR",
+                                                            "text": "i"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "'='",
+                                                    "text": "="
+                                                },
+                                                {
+                                                    "exp": [
+                                                        {
+                                                            "intm": [
+                                                                {
+                                                                    "type": "INT",
+                                                                    "text": "0"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "';'",
+                                            "text": ";"
+                                        },
+                                        {
+                                            "exp": [
+                                                {
+                                                    "exp": [
+                                                        {
+                                                            "exp": [
+                                                                {
+                                                                    "paramName": [
+                                                                        {
+                                                                            "type": "PAR",
+                                                                            "text": "i"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "'<'",
+                                                            "text": "<"
+                                                        },
+                                                        {
+                                                            "exp": [
+                                                                {
+                                                                    "paramName": [
+                                                                        {
+                                                                            "type": "PAR",
+                                                                            "text": "count"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "'-'",
+                                                    "text": "-"
+                                                },
+                                                {
+                                                    "exp": [
+                                                        {
+                                                            "intm": [
+                                                                {
+                                                                    "type": "INT",
+                                                                    "text": "1"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "';'",
+                                            "text": ";"
+                                        },
+                                        {
+                                            "assignFunc": [
+                                                {
+                                                    "paramName": [
+                                                        {
+                                                            "type": "PAR",
+                                                            "text": "i"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "'='",
+                                                    "text": "="
+                                                },
+                                                {
+                                                    "exp": [
+                                                        {
+                                                            "exp": [
+                                                                {
+                                                                    "paramName": [
+                                                                        {
+                                                                            "type": "PAR",
+                                                                            "text": "i"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "'+'",
+                                                            "text": "+"
+                                                        },
+                                                        {
+                                                            "exp": [
+                                                                {
+                                                                    "intm": [
+                                                                        {
+                                                                            "type": "INT",
+                                                                            "text": "1"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "')'",
+                                            "text": ")"
+                                        },
+                                        {
+                                            "type": "'{'",
+                                            "text": "{"
+                                        },
+                                        {
+                                            "body": [
+                                                {
+                                                    "func": [
+                                                        {
+                                                            "printf": [
+                                                                {
+                                                                    "type": "'printf'",
+                                                                    "text": "printf"
+                                                                },
+                                                                {
+                                                                    "type": "'('",
+                                                                    "text": "("
+                                                                },
+                                                                {
+                                                                    "stringm": [
+                                                                        {
+                                                                            "type": "STRING",
+                                                                            "text": "\"%d,\""
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "type": "','",
+                                                                    "text": ","
+                                                                },
+                                                                {
+                                                                    "exp": [
+                                                                        {
+                                                                            "array": [
+                                                                                {
+                                                                                    "paramName": [
+                                                                                        {
+                                                                                            "type": "PAR",
+                                                                                            "text": "numbers"
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                {
+                                                                                    "type": "'['",
+                                                                                    "text": "["
+                                                                                },
+                                                                                {
+                                                                                    "exp": [
+                                                                                        {
+                                                                                            "paramName": [
+                                                                                                {
+                                                                                                    "type": "PAR",
+                                                                                                    "text": "i"
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                {
+                                                                                    "type": "']'",
+                                                                                    "text": "]"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "type": "')'",
+                                                                    "text": ")"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "';'",
+                                                    "text": ";"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "'}'",
+                                            "text": "}"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "func": [
+                                {
+                                    "printf": [
+                                        {
+                                            "type": "'printf'",
+                                            "text": "printf"
+                                        },
+                                        {
+                                            "type": "'('",
+                                            "text": "("
+                                        },
+                                        {
+                                            "stringm": [
+                                                {
+                                                    "type": "STRING",
+                                                    "text": "\"%d\\n\""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "','",
+                                            "text": ","
+                                        },
+                                        {
+                                            "exp": [
+                                                {
+                                                    "array": [
+                                                        {
+                                                            "paramName": [
+                                                                {
+                                                                    "type": "PAR",
+                                                                    "text": "numbers"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "'['",
+                                                            "text": "["
+                                                        },
+                                                        {
+                                                            "exp": [
+                                                                {
+                                                                    "exp": [
+                                                                        {
+                                                                            "paramName": [
+                                                                                {
+                                                                                    "type": "PAR",
+                                                                                    "text": "count"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "type": "'-'",
+                                                                    "text": "-"
+                                                                },
+                                                                {
+                                                                    "exp": [
+                                                                        {
+                                                                            "intm": [
+                                                                                {
+                                                                                    "type": "INT",
+                                                                                    "text": "1"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "']'",
+                                                            "text": "]"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "')'",
+                                            "text": ")"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "';'",
+                            "text": ";"
+                        }
+                    ]
+                },
+                {
+                    "type": "'}'",
+                    "text": "}"
+                }
+            ]
+        }
+    ]
+}

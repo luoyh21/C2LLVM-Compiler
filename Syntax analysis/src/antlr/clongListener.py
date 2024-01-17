@@ -1,6 +1,6 @@
-# Generated from clong.g4 by ANTLR 4.7.2
+# Generated from clong.g4 by ANTLR 4.13.1
 from antlr4 import *
-if __name__ is not None and "." in __name__:
+if "." in __name__:
     from .clongParser import clongParser
 else:
     from clongParser import clongParser
@@ -287,3 +287,5 @@ class clongListener(ParseTreeListener):
         pass
 
 
+
+del clongParser
