@@ -1,0 +1,1 @@
+使用python main.py <filename>运行src文件夹中的main.py，(如输入test.c路径)即可输出TargetCode文件夹中的test.c的分析结果。
