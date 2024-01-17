@@ -41,6 +41,7 @@ class Visitor(clongVisitor):
         # 不支持引用库文件
         print("正在分析prog")
         self.visitMain(ctx.main())
+        print("分析完成!")
         
     def visitMain(self,ctx:clongParser.MainContext):
         '''
@@ -76,7 +77,7 @@ class Visitor(clongVisitor):
         语法：body:(func';'|block)*;
         描述：处理函数体
         '''
-        print("正在分析body")
+        print(ctx.getText())
         for i in range(ctx.getChildCount()):
             self.visit(ctx.getChild(i))
             if self.Blocks[-1].is_terminated:
@@ -88,7 +89,6 @@ class Visitor(clongVisitor):
         语法：func:(printf|gets|strlen|returnFunc);
         描述：处理单行函数调用
         '''
-        print("正在分析func")
         return self.visit(ctx.getChild(0))
         
     def visitStrlen(self, ctx: clongParser.StrlenContext):
@@ -109,8 +109,8 @@ class Visitor(clongVisitor):
         strName = self.visit(ctx.paramName())
         strPtr = self.SymbolTable.getItem(strName)[1]
 
-        Arguments = currentBuilder.gep(strPtr, [int32(0), int32(0)])
-        strlen = currentBuilder.call(strlenFunc, [Arguments])
+        Argument = currentBuilder.gep(strPtr, [int32(0), int32(0)])
+        strlen = currentBuilder.call(strlenFunc, [Argument])
 
         return strlen
         
@@ -119,11 +119,10 @@ class Visitor(clongVisitor):
         语法：printf: 'printf' '(' ((stringm | paramName) (',' exp)*) ')';
         描述：处理printf函数调用
         """
-        print("正在分析printf")
         if 'printf' in self.Functions:
             printfFunc = self.Module.globals['printf']
         else:
-            printfType = ir.FunctionType(int32, [int8.as_pointer()], var_arg=True)
+            printfType = ir.FunctionType(int32, [ir.PointerType(int8)], var_arg=True)
             printfFunc = ir.Function(self.Module, printfType, 'printf')
             self.Functions['printf'] = printfFunc
 
@@ -132,13 +131,13 @@ class Visitor(clongVisitor):
 
         # 处理字符串
         if isinstance(ctx.getChild(2), clongParser.StringmContext):
-            strVal = self.visit(ctx.getChild(2))
-            strPtr = currentBuilder.gep(strVal, [zero], inbounds=True)
+            strPtr = self.visit(ctx.getChild(2))
+            strPtr = currentBuilder.gep(strPtr, [zero, zero], inbounds=True)
         # 处理变量  
         else:
             strName = self.visit(ctx.getChild(2))
             strPtr = self.SymbolTable.getItem(strName)[1]
-        
+
         # 处理参数
         Arguments = [strPtr]
         length = ctx.getChildCount()
@@ -147,9 +146,9 @@ class Visitor(clongVisitor):
             Arguments.append(self.visit(ctx.getChild(currentNumber)))
             currentNumber += 2
 
-        currentBuilder.call(printfFunc, Arguments)
+        rtn = currentBuilder.call(printfFunc, Arguments)
 
-        return
+        return rtn
 
 
     def visitGets(self, ctx: clongParser.GetsContext):
@@ -165,19 +164,14 @@ class Visitor(clongVisitor):
             self.Functions['gets'] = getsFunc
 
         currentBuilder = self.Builders[-1]
+        zero = ir.Constant(int32, 0)
 
         strName = self.visit(ctx.paramName())
-        zero = ir.Constant(int8, 0)
-        
         strPtr = self.SymbolTable.getItem(strName)[1]
+        Arguments = [currentBuilder.gep(strPtr, [zero, zero], inbounds=True)]
 
-        strPtr = currentBuilder.load(strPtr)
-        strPtr = currentBuilder.gep(strPtr, [zero], inbounds=True)
-        Arguments = [strPtr]
-
-        currentBuilder.call(getsFunc, Arguments)
-
-        return strPtr
+        rtn = currentBuilder.call(getsFunc, Arguments)
+        return rtn
         
     def visitReturnFunc(self, ctx: clongParser.ReturnFuncContext):
         """
@@ -196,7 +190,6 @@ class Visitor(clongVisitor):
         语法：block:ifElse|whileFunc|forFunc|initParam|initArray|assign;
         描述：处理语句块
         """
-        print("正在分析block")
         for i in range(ctx.getChildCount()):
             self.visit(ctx.getChild(i))
         
@@ -235,7 +228,7 @@ class Visitor(clongVisitor):
         builderTemp = self.Builders.pop()
         if not blockTemp.is_terminated:
             builderTemp.branch(EndIfBlock)
-        IfBuilder.branch(EndIfBlock)
+
         self.Blocks.append(EndIfBlock)
         self.Builders.append(ir.IRBuilder(EndIfBlock))
 
@@ -259,9 +252,8 @@ class Visitor(clongVisitor):
         self.Builders.append(ir.IRBuilder(TrueBlock))
         self.visit(ctx.body())
 
-        print(self.Blocks[-1])
         if not self.Blocks[-1].is_terminated:
-            currentBuilder.branch(self.EndIfBlock)
+            self.Builders[-1].branch(self.EndIfBlock)
 
         self.Blocks.pop()
         self.Builders.pop()
@@ -291,7 +283,7 @@ class Visitor(clongVisitor):
         self.visit(ctx.body())
 
         if not self.Blocks[-1].is_terminated:
-            currentBuilder.branch(self.EndIfBlock)
+            self.Builders[-1].branch(self.EndIfBlock)
 
         self.Blocks.pop()
         self.Builders.pop()
@@ -372,7 +364,7 @@ class Visitor(clongVisitor):
         self.Builders.append(ir.IRBuilder(ForBodyBlock))
         self.visit(ctx.body())
         self.visit(ctx.assignFunc())
-        currentBuilder.branch(ForConditionBlock)
+        self.Builders[-1].branch(ForConditionBlock)
 
         self.Blocks.pop()
         self.Builders.pop()
@@ -473,11 +465,11 @@ class Visitor(clongVisitor):
         """
         paramType = self.visit(ctx.typeParam())
         paramName = self.visit(ctx.paramName())
-        length = self.visit(ctx.intm())
+        length = int(ctx.intm().getText())
 
         currentBuilder = self.Builders[-1]
         ptr = currentBuilder.alloca(ir.ArrayType(paramType, length), name=paramName)
-        self.SymbolTable.addItem(paramName, (paramType, ptr))
+        self.SymbolTable.addItem(paramName, (ir.ArrayType(paramType, length), ptr))
 
         
     def visitAssign(self, ctx: clongParser.AssignContext):
@@ -490,9 +482,15 @@ class Visitor(clongVisitor):
         currentNumber = 0
         exptr = self.visit(ctx.getChild(length - 2))
         while currentNumber < length - 2:
-            str = self.visit(ctx.getChild(currentNumber))
-            ptr = self.SymbolTable.getItem(str)[1]
-            currentBuilder.store(exptr, ptr)
+            child = ctx.getChild(currentNumber)
+            if isinstance(child, clongParser.ParamNameContext):
+                paramName = self.visit(child)
+                ptr = self.SymbolTable.getItem(paramName)[1]
+                currentBuilder.store(exptr, ptr)
+            elif isinstance(child, clongParser.ArrayContext):
+                ptr = self.visit(child)
+                print(type(ptr))
+                currentBuilder.store(exptr, ptr)
             currentNumber += 2
 
         
@@ -505,7 +503,6 @@ class Visitor(clongVisitor):
         """
         currentBuilder = self.Builders[-1]
         if ctx.getChildCount() == 1:
-            print("一个参数")
             child = ctx.getChild(0)
             if isinstance(child, clongParser.ParamNameContext):
                 paramName = self.visit(child)
@@ -525,7 +522,6 @@ class Visitor(clongVisitor):
             elif isinstance(child, clongParser.StringmContext):
                 return self.visit(child)
         elif ctx.getChildCount() == 2:
-            print("两个参数")
             child = ctx.getChild(0)
             if child.getText() == '!':
                 exp = self.visit(ctx.getChild(1))
@@ -539,7 +535,6 @@ class Visitor(clongVisitor):
                 else:
                     return None
         elif ctx.getChildCount() == 3:
-            print("三个参数")
             midChild = ctx.getChild(1)
             if isinstance(midChild, clongParser.ExpContext):
                 return self.visit(midChild)
@@ -547,24 +542,24 @@ class Visitor(clongVisitor):
                 # 处理二元比较运算符
                 left = self.visit(ctx.getChild(0))
                 right = self.visit(ctx.getChild(2))
-                left_text = ctx.getChild(0).getText()
+                left_32 = currentBuilder.zext(left, int32)
+                right_32 = currentBuilder.zext(right, int32)
+                
                 op = midChild.getText()
-                right_text = ctx.getChild(2).getText()
-                print(left_text, op, right_text)
                 if op == '+':
-                    return currentBuilder.add(left, right)
+                    return currentBuilder.add(left_32, right_32)
                 elif op == '-':
-                    return currentBuilder.sub(left, right)
+                    return currentBuilder.sub(left_32, right_32)
                 elif op == '*':
-                    return currentBuilder.mul(left, right)
+                    return currentBuilder.mul(left_32, right_32)
                 elif op == '/':
-                    return currentBuilder.sdiv(left, right)
+                    return currentBuilder.sdiv(left_32, right_32)
                 elif op == '%':
-                    return currentBuilder.srem(left, right)
+                    return currentBuilder.srem(left_32, right_32)
                 elif op == '||':
-                    return currentBuilder.or_(left, right)
+                    return currentBuilder.or_(left_32, right_32)
                 elif op == '&&':
-                    return currentBuilder.and_(left, right)
+                    return currentBuilder.and_(left_32, right_32)
                 else:
                     return currentBuilder.icmp_signed(op, left, right)
 
@@ -590,9 +585,12 @@ class Visitor(clongVisitor):
         """
         paramName = self.visit(ctx.paramName())
         ptr = self.SymbolTable.getItem(paramName)[1]
-        element_type = self.SymbolTable.getItem(paramName)[0]
         index = self.visit(ctx.exp())
-        return self.Builders[-1].gep(ptr, [element_type(0), index])
+        currentBuilder = self.Builders[-1]
+        zero = ir.Constant(int32, 0)
+        ptr = currentBuilder.gep(ptr, [zero, index], inbounds=True)
+        print(type(ptr))
+        return ptr
         
     def visitLibrary(self, ctx: clongParser.LibraryContext):
         """
@@ -613,7 +611,7 @@ class Visitor(clongVisitor):
         语法：intm:INT;
         描述：处理整数
         """
-        return int32(int(ctx.getText()))
+        return ir.Constant(int32, int(ctx.getText()))
     
     def visitDoublem(self, ctx: clongParser.DoublemContext):
         """
@@ -628,12 +626,12 @@ class Visitor(clongVisitor):
         描述：处理字符串
         """
         index = self.ConstantIndex
-        index += 1
-        self.ConstantIndex = index
-        str = ctx.getText()[1:-1].replace('\\n', '\n')
+        self.ConstantIndex += 1
+        str = ctx.getText()[1:-1]
+        str = str.replace('\\n', '\n')
         str += '\0'
         length = len(bytearray(str, 'utf-8'))
-        val = ir.GlobalValue(self.Module, ir.ArrayType(int8, length), ".str%d" % index)
+        val = ir.GlobalVariable(self.Module, ir.ArrayType(int8, length), ".str%d" % index)
         val.global_constant = True
         val.initializer = ir.Constant(ir.ArrayType(int8, length), bytearray(str, 'utf-8'))
         return val

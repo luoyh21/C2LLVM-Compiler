@@ -40,9 +40,9 @@ int main()
         {
             if (numbers[j] > numbers[j + 1])
             {
-                int temp = numbers[j];
+                int swap = numbers[j];
                 numbers[j] = numbers[j + 1];
-                numbers[j + 1] = temp;
+                numbers[j + 1] = swap;
             }
         }
     }
