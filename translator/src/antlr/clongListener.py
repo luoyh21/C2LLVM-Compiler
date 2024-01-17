@@ -215,6 +215,15 @@ class clongListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by clongParser#condition.
+    def enterCondition(self, ctx:clongParser.ConditionContext):
+        pass
+
+    # Exit a parse tree produced by clongParser#condition.
+    def exitCondition(self, ctx:clongParser.ConditionContext):
+        pass
+
+
     # Enter a parse tree produced by clongParser#typeParam.
     def enterTypeParam(self, ctx:clongParser.TypeParamContext):
         pass

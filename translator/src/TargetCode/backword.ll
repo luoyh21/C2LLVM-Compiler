@@ -1,6 +1,6 @@
 ; ModuleID = "clong prog"
 target triple = "x86_64-pc-linux-gnu"
-target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
+target datalayout = "e-m:o-i64:64-f80:128-n8:16:32:64-S128"
 
 define i32 @"main"()
 {
@@ -56,52 +56,51 @@ if.false.1:
   %".46" = load i32, i32* %".6"
   %".47" = icmp slt i32 %".45", %".46"
   %".48" = load i32, i32* %".36"
-  %".49" = zext i1 %".47" to i32
-  %".50" = and i32 %".49", %".48"
-  %".51" = icmp ne i32 %".50", 1
-  br i1 %".51", label %".40", label %".41"
+  %".49" = icmp ne i32 %".48", 1
+  %".50" = and i1 %".47", %".49"
+  br i1 %".50", label %".40", label %".41"
 .40:
-  br label %".53"
+  br label %".52"
 .41:
-  br label %".78"
+  br label %".77"
+.52:
+  %".55" = load i32, i32* %".6"
+  %".56" = sub i32 %".55", 1
+  %".57" = load i32, i32* %".8"
+  %".58" = sub i32 %".56", %".57"
+  %".59" = getelementptr inbounds [1001 x i8], [1001 x i8]* %"StringGet", i32 0, i32 %".58"
+  %".60" = load i8, i8* %".59"
+  %".61" = load i32, i32* %".8"
+  %".62" = getelementptr inbounds [1001 x i8], [1001 x i8]* %"StringGet", i32 0, i32 %".61"
+  %".63" = load i8, i8* %".62"
+  %".64" = zext i8 %".60" to i32
+  %".65" = zext i8 %".63" to i32
+  %".66" = icmp ne i32 %".64", %".65"
+  br i1 %".66", label %"if.true.2", label %"if.false.2"
 .53:
-  %".56" = load i32, i32* %".6"
-  %".57" = sub i32 %".56", 1
-  %".58" = load i32, i32* %".8"
-  %".59" = sub i32 %".57", %".58"
-  %".60" = getelementptr inbounds [1001 x i8], [1001 x i8]* %"StringGet", i32 0, i32 %".59"
-  %".61" = load i8, i8* %".60"
-  %".62" = load i32, i32* %".8"
-  %".63" = getelementptr inbounds [1001 x i8], [1001 x i8]* %"StringGet", i32 0, i32 %".62"
-  %".64" = load i8, i8* %".63"
-  %".65" = zext i8 %".61" to i32
-  %".66" = zext i8 %".64" to i32
-  %".67" = icmp ne i8 %".61", %".64"
-  br i1 %".67", label %"if.true.2", label %"if.false.2"
-.54:
-  %".74" = load i32, i32* %".8"
-  %".75" = add i32 %".74", 1
-  store i32 %".75", i32* %".8"
+  %".73" = load i32, i32* %".8"
+  %".74" = add i32 %".73", 1
+  store i32 %".74", i32* %".8"
   br label %".39"
 if.true.2:
-  %".69" = getelementptr inbounds [7 x i8], [7 x i8]* @".str3", i32 0, i32 0
-  %".70" = call i32 (i8*, ...) @"printf"(i8* %".69")
+  %".68" = getelementptr inbounds [7 x i8], [7 x i8]* @".str3", i32 0, i32 0
+  %".69" = call i32 (i8*, ...) @"printf"(i8* %".68")
   store i32 1, i32* %".36"
-  br label %".54"
+  br label %".53"
 if.false.2:
-  br label %".54"
+  br label %".53"
+.77:
+  %".80" = load i32, i32* %".36"
+  %".81" = icmp ne i32 %".80", 1
+  br i1 %".81", label %"if.true.3", label %"if.false.3"
 .78:
-  %".81" = load i32, i32* %".36"
-  %".82" = icmp ne i32 %".81", 1
-  br i1 %".82", label %"if.true.3", label %"if.false.3"
-.79:
   br label %".26"
 if.true.3:
-  %".84" = getelementptr inbounds [6 x i8], [6 x i8]* @".str4", i32 0, i32 0
-  %".85" = call i32 (i8*, ...) @"printf"(i8* %".84")
-  br label %".79"
+  %".83" = getelementptr inbounds [6 x i8], [6 x i8]* @".str4", i32 0, i32 0
+  %".84" = call i32 (i8*, ...) @"printf"(i8* %".83")
+  br label %".78"
 if.false.3:
-  br label %".79"
+  br label %".78"
 }
 
 declare i32 @"printf"(i8* %".1", ...)

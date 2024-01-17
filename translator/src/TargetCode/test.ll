@@ -1,6 +1,6 @@
 ; ModuleID = "clong prog"
 target triple = "x86_64-pc-linux-gnu"
-target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
+target datalayout = "e-m:o-i64:64-f80:128-n8:16:32:64-S128"
 
 define i32 @"main"()
 {

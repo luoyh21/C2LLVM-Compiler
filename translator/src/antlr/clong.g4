@@ -29,14 +29,14 @@ strlen: 'strlen' '(' paramName ')';
 returnFunc: 'return' (intm)?;
 //if-else语句
 ifElse: ifFunc (elseif)* (elseFunc)?;
-ifFunc: 'if' '(' exp ')' '{' body '}';
-elseif: 'else' 'if' '(' exp ')' '{' body '}';
+ifFunc: 'if' '(' condition ')' '{' body '}';
+elseif: 'else' 'if' '(' condition ')' '{' body '}';
 elseFunc: 'else' '{' body '}';
 //while语句
-whileFunc: 'while' '(' exp ')' '{' body '}';
+whileFunc: 'while' '(' condition ')' '{' body '}';
 //for语句
 forFunc:
-	'for' '(' initFunc ';' exp ';' assignFunc ')' '{' body '}';
+	'for' '(' initFunc ';' condition ';' assignFunc ')' '{' body '}';
 initFunc: (typeParam)? paramName ('=' exp)? (',' initFunc)? |;
 assignFunc: paramName '=' exp (',' assignFunc)? |;
 //初始化参数
@@ -55,22 +55,13 @@ exp:
 	| array
 	| func
 	| '(' exp ')'
-	| exp op = (
-		'+'
-		| '-'
-		| '*'
-		| '/'
-		| '%'
-		| '>'
-		| '<'
-		| '>='
-		| '<='
-		| '=='
-		| '!='
-		| '&&'
-		| '||'
-	) exp
-	| op = '!' exp;
+	| exp op = ('+' | '-' | '*' | '/' | '%') exp;
+//条件
+condition:
+	'(' condition ')'
+	| exp op = ('>' | '<' | '>=' | '<=' | '==' | '!=') exp
+	| '!' condition
+	| condition op = ( '&&' | '||') condition;
 //类型
 typeParam: 'int' | 'char' | 'double';
 //数组元素

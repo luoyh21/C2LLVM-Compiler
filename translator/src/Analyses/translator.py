@@ -13,7 +13,7 @@ class Visitor(clongVisitor):
         super(clongVisitor, self).__init__()
         self.Module=ir.Module("clong prog")
         self.Module.triple = "x86_64-pc-linux-gnu"
-        self.Module.data_layout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
+        self.Module.data_layout = "e-m:o-i64:64-f80:128-n8:16:32:64-S128"
         
         # 语句块
         self.Blocks: list[ir.Block] = []
@@ -235,7 +235,7 @@ class Visitor(clongVisitor):
         
     def visitIfFunc(self, ctx: clongParser.IfFuncContext):
         """
-        语法：ifFunc:'if' '('exp')''{'body'}';
+        语法：ifFunc:'if' '('condition')''{'body'}';
         描述：处理if部分
         """
         self.SymbolTable.push()
@@ -243,7 +243,7 @@ class Visitor(clongVisitor):
         TrueBlock = currentBuilder.append_basic_block("if.true")
         FalseBlock = currentBuilder.append_basic_block("if.false")
 
-        result = self.visit(ctx.exp())
+        result = self.visit(ctx.condition())
         currentBuilder.cbranch(result, TrueBlock, FalseBlock)
 
         self.Blocks.pop()
@@ -265,7 +265,7 @@ class Visitor(clongVisitor):
         
     def visitElseif(self, ctx: clongParser.ElseifContext):
         """
-        语法：elseif:'else''if''('exp')''{'body'}';
+        语法：elseif:'else''if''('condition')''{'body'}';
         描述：处理elseif部分
         """
         self.SymbolTable.push()
@@ -273,7 +273,7 @@ class Visitor(clongVisitor):
         TrueBlock = currentBuilder.append_basic_block()
         FalseBlock = currentBuilder.append_basic_block()
 
-        result = self.visit(ctx.exp())
+        result = self.visit(ctx.condition())
         currentBuilder.cbranch(result, TrueBlock, FalseBlock)
 
         self.Blocks.pop()
@@ -318,7 +318,7 @@ class Visitor(clongVisitor):
         self.Blocks.append(WhileConditionBlock)
         self.Builders.append(ir.IRBuilder(WhileConditionBlock))
 
-        result = self.visit(ctx.exp())
+        result = self.visit(ctx.condition())
         self.Builders[-1].cbranch(result, WhileBodyBlock, WhileEndBlock)
 
         self.Blocks.pop()
@@ -355,7 +355,7 @@ class Visitor(clongVisitor):
         self.Blocks.append(ForConditionBlock)
         self.Builders.append(ir.IRBuilder(ForConditionBlock))
 
-        result = self.visit(ctx.exp())
+        result = self.visit(ctx.condition())
         self.Builders[-1].cbranch(result, ForBodyBlock, ForEndBlock)
         
         self.Blocks.pop()
@@ -496,9 +496,15 @@ class Visitor(clongVisitor):
         
     def visitExp(self, ctx: clongParser.ExpContext):
         """
-        语法：exp:charm|stringm|paramName|(op='-')?(intm|doublem)|array|func|'('exp')'
-            |exp op=('+'|'-'|'*'|'/'|'%'|'>'|'<'|'>='|'<='|'=='|'!='|'&&'|'||') exp
-            |op='!'exp;
+        语法：exp:
+            charm
+            | stringm
+            | paramName
+            | (op = '-')? (intm | doublem)
+            | array
+            | func
+            | '(' exp ')'
+            | exp op = ('+' | '-' | '*' | '/' | '%') exp;
         描述：处理表达式，用于计算出一个值
         """
         currentBuilder = self.Builders[-1]
@@ -523,10 +529,7 @@ class Visitor(clongVisitor):
                 return self.visit(child)
         elif ctx.getChildCount() == 2:
             child = ctx.getChild(0)
-            if child.getText() == '!':
-                exp = self.visit(ctx.getChild(1))
-                return currentBuilder.xor(exp, 1)
-            elif child.getText() == '-':
+            if child.getText() == '-':
                 num = ctx.getChild(1)
                 if isinstance(num, clongParser.IntmContext):
                     return int32(-int(num.getText()))
@@ -556,13 +559,46 @@ class Visitor(clongVisitor):
                     return currentBuilder.sdiv(left_32, right_32)
                 elif op == '%':
                     return currentBuilder.srem(left_32, right_32)
-                elif op == '||':
-                    return currentBuilder.or_(left_32, right_32)
-                elif op == '&&':
-                    return currentBuilder.and_(left_32, right_32)
-                else:
-                    return currentBuilder.icmp_signed(op, left, right)
 
+    def visitCondition(self, ctx: clongParser.ConditionContext):
+        """
+        语法：condition:
+            exp
+            | '(' condition ')'
+            | exp op = ('>' | '<' | '>=' | '<=' | '==' | '!=') exp
+            | '!' condition
+            | condition op = ( '&&' | '||') condition;
+        描述：处理条件表达式
+        """
+        currentBuilder = self.Builders[-1]
+        if ctx.getChildCount() == 1:
+            child = ctx.getChild(0)
+            if isinstance(child, clongParser.ExpContext):
+                val = self.visit(child)
+                return currentBuilder.icmp_signed('!=', val, int32(0))
+        elif ctx.getChildCount() == 2:
+            child = ctx.getChild(0)
+            if child.getText() == '!':
+                condition = self.visit(ctx.getChild(1))
+                return currentBuilder.not_(condition)
+        elif ctx.getChildCount() == 3:
+            if isinstance(ctx.getChild(0), clongParser.ExpContext):
+                left = self.visit(ctx.getChild(0))
+                right = self.visit(ctx.getChild(2))
+                left_32 = currentBuilder.zext(left, int32)
+                right_32 = currentBuilder.zext(right, int32)
+                op = ctx.getChild(1).getText()
+                return currentBuilder.icmp_signed(op, left_32, right_32)
+            elif isinstance(ctx.getChild(0), clongParser.ConditionContext):
+                left = self.visit(ctx.getChild(0))
+                right = self.visit(ctx.getChild(2))
+                op = ctx.getChild(1).getText()
+                if op == '&&':
+                    return currentBuilder.and_(left, right)
+                elif op == '||':
+                    return currentBuilder.or_(left, right)
+        else:
+            return self.visit(ctx.getChild(1))
         
     def visitTypeParam(self, ctx: clongParser.TypeParamContext):
         """
